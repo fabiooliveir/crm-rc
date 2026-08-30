@@ -1,5 +1,9 @@
 # 3. Arquitetura de Software e Stack Técnica 🏛️
 
+> 📄 **Documento Oficial de Engenharia:** Para a especificação técnica detalhada de Requisitos Não-Funcionais (RNFs), métricas de Core Web Vitals, protocolos de sincronização e governança LGPD, consulte: [RNF-Requisitos-Nao-Funcionais-e-LGPD.md](../requirements/RNF-Requisitos-Nao-Funcionais-e-LGPD.md).
+
+---
+
 ## 🧱 Visão da Arquitetura C4
 
 ```mermaid
@@ -13,21 +17,22 @@ graph TB
 
     User -->|Interage| PWA
     PWA -->|Cache Local & Offline| IDB
-    PWA -->|Sincronização HTTPS/JWT| API
-    API -->|Persistência Central| DB
+    PWA -->|Sincronização HTTPS/JWT (Idempotente)| API
+    API -->|Persistência Central com RLS| DB
     API -->|Consulta CNPJ| Ext
 ```
 
 ---
 
-## 🛠️ Stack Tecnológica
+## 🛠️ Stack Tecnológica & Requisitos Não-Funcionais
 
-| Camada | Tecnologia Escolhida | Racional |
+| Camada | Tecnologia Escolhida | Racional & Metas de Engenharia |
 |---|---|---|
-| **Frontend** | React / Next.js (App Router) + Tailwind CSS | Performance SSR/SSG, interface responsiva e componentes modulares |
-| **Design System** | Shadcn UI + Radix UI + Lucide Icons | Acessibilidade, velocidade de prototipação e estética moderna |
-| **Offline Layer** | PWA + Workbox + Dexie.js (IndexedDB) | Permite funcionamento completo offline e cache local de pedidos |
-| **Backend API** | Node.js (NestJS / Fastify) | Tipagem unificada com TypeScript e alta velocidade de resposta |
-| **Banco de Dados** | PostgreSQL + Prisma ORM | Integridade relacional estrita, suporte a JSONB e consultas complexas |
-| **Segurança** | NextAuth / JWT + Row-Level Security (RLS) | Isolamento completo entre contas de representantes |
-| **Geração de PDF** | @react-pdf/renderer | Geração de PDFs de pedidos diretamente no client/server sem gargalos |
+| **Frontend** | React / Next.js (App Router) + Tailwind CSS | Performance SSR/SSG, LCP $\le 1.2\text{s}$, bundle inicial $\le 160\text{ KB}$ |
+| **Design System** | Shadcn UI + Radix UI + Lucide Icons | Acessibilidade WCAG AA, botões com touch target $\ge 48\text{px}$ e modo solar |
+| **Offline Layer** | PWA + Workbox + Dexie.js (IndexedDB) | Operação 100% offline de catálogo e pedidos com sincronização assíncrona |
+| **Backend API** | Node.js (NestJS / Fastify) | Tipagem TypeScript, latência de API $\text{P95} \le 150\text{ms}$ e rate limit ativo |
+| **Banco de Dados** | PostgreSQL (Prisma / Drizzle ORM) | Integridade relacional, RLS (Row-Level Security) e criptografia AES-256 |
+| **Segurança & LGPD** | NextAuth / JWT + Refresh Tokens HttpOnly | Argon2id para senhas, TLS 1.3, RLS por tenant e anonimização de PII |
+| **Geração de PDF** | @react-pdf/renderer | Geração de PDFs no client-side em $\le 800\text{ms}$ sem chamadas de rede |
+
