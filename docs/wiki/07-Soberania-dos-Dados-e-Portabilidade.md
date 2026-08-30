@@ -1,6 +1,8 @@
 # 7. Soberania dos Dados, Portabilidade e LGPD 🛡️
 
-> 📄 **Documento Oficial de Engenharia:** Para a especificação técnica completa de requisitos não-funcionais, diretrizes de segurança, criptografia e matriz de conformidade com a LGPD (RIPD), consulte: [RNF-Requisitos-Nao-Funcionais-e-LGPD.md](../requirements/RNF-Requisitos-Nao-Funcionais-e-LGPD.md).
+> 📄 **Documentos Oficiais de Segurança & LGPD:**
+> - [RNF-Requisitos-Nao-Funcionais-e-LGPD.md](../requirements/RNF-Requisitos-Nao-Funcionais-e-LGPD.md) (`SDLC 1.3`) — Diretrizes de segurança e matriz de conformidade LGPD.
+> - [POLITICA-DE-SEGURANCA-E-ISOLAMENTO-RLS.md](../architecture/POLITICA-DE-SEGURANCA-E-ISOLAMENTO-RLS.md) (`SDLC 2.4`) — Políticas de Row-Level Security (RLS), Envelope Encryption e mitigação OWASP.
 
 ---
 

@@ -35,6 +35,7 @@ O ciclo de vida de desenvolvimento do projeto (**SDLC**) está estruturado nas s
    - 🏛️ [Arquitetura de Solução, Modelo C4 e ADRs](docs/architecture/ARQUITETURA-DE-SOLUCAO-E-STACK.md) (`SDLC 2.1`)
    - 📱 [Design System, Wireframes & Guia de Estilos Mobile-First](docs/design/DESIGN-SYSTEM-E-WIREFRAMES.md) (`SDLC 2.2`)
    - 🔄 [Estratégia de Cache e Sincronização Offline](docs/architecture/ESTRATEGIA-DE-CACHE-E-SYNC-OFFLINE.md) (`SDLC 2.3`)
+   - 🛡️ [Política de Segurança, Criptografia e Isolamento RLS](docs/architecture/POLITICA-DE-SEGURANCA-E-ISOLAMENTO-RLS.md) (`SDLC 2.4`)
 3. **Fase 3: Desenvolvimento - Core & Módulos Funcionais** (`phase:3-development`)
    - `E03`: Infraestrutura Base, Autenticação e Gestão de Conta
    - `E04`: Módulo de Representadas & Catálogo de Produtos
