@@ -42,9 +42,10 @@ O ciclo de vida de desenvolvimento do projeto (**SDLC**) está estruturado nas s
    - ⚡ [Setup Inicial do Boilerplate, TypeScript e Git Hooks](package.json) (`SDLC 3.1`)
    - 🔐 [Autenticação Segura, Tokens e Recuperação de Senha](src/lib/auth/authService.ts) (`SDLC 3.2`)
    - ⚙️ [Gestão de Perfil do Representante e Configurações de Conta](src/app/configuracoes/page.tsx) (`SDLC 3.3`)
-   - `E04`: Módulo de Representadas & Catálogo de Produtos
+   - `E04`: Módulo de Representadas & Catálogo de Produtos (Concluído ✅)
      - 🏭 [CRUD de Representadas e Regras Comerciais Básicas](src/app/representadas/page.tsx) (`SDLC 4.1`)
      - 📦 [Catálogo de Produtos e Grade por Representada](src/app/catalogo/page.tsx) (`SDLC 4.2`)
+     - 💲 [Gestão de Tabelas de Preços, Condições e Alçadas de Desconto](src/app/tabelas-precos/page.tsx) (`SDLC 4.3`)
    - `E05`: Módulo de Clientes & Contatos (Propriedade Exclusiva)
    - `E06`: Módulo de Pedidos de Venda & Orçamentos
    - `E07`: Módulo Financeiro & Controle de Comissões

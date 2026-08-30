@@ -168,6 +168,46 @@ export interface PedidoItem {
   comissaoPctAplicada: number;
 }
 
+export enum AlcadaStatus {
+  LIBERADO = 'LIBERADO',
+  REDUCAO_COMISSAO = 'REDUCAO_COMISSAO',
+  REQUER_AUTORIZACAO = 'REQUER_AUTORIZACAO',
+}
+
+export interface AlcadaFaixa {
+  descontoMaximoPct: number; // Ex: 5.0 (até 5%), 10.0, 15.0
+  fatorComissaoPct: number; // Ex: 100.0 (integral), 80.0 (20% redução), 50.0
+  requerAutorizacao: boolean; // Se true, pedido bloqueado para validação com gerente
+  descricao: string;
+}
+
+export interface CondicaoPagamento {
+  id: string;
+  descricao: string; // Ex: '30 DDL', '28/42/56 dias', 'À Vista Antecipado'
+  diasPrazos: number[]; // Ex: [30] ou [28, 42, 56] ou [0]
+  descontoAdicionalPct?: number; // Ex: 3.0 para pagamento à vista
+  acrescimoPct?: number; // Ex: 2.0 para prazos longos
+  pedidoMinimoValor?: number; // Ex: R$ 2.000,00
+  ativo: boolean;
+}
+
+export interface TabelaPreco {
+  id: string;
+  tenantId: string;
+  representadaId: string;
+  nome: string; // Ex: 'Tabela Padrão Balcão', 'Tabela Distribuidor'
+  descricao?: string;
+  fatorAjustePadraoPct: number; // Ex: 0.0 (base), -10.0 (10% desc), 5.0 (+5%)
+  vigenciaInicio?: string; // YYYY-MM-DD
+  vigenciaFim?: string; // YYYY-MM-DD
+  padrao: boolean;
+  ativo: boolean;
+  condicoesPagamento: CondicaoPagamento[];
+  alcadasDesconto: AlcadaFaixa[];
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface PedidoVenda {
   id: string;
   tenantId: string;
