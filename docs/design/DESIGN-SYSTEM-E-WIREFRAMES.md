@@ -316,7 +316,7 @@ graph LR
 
 | Nome da Tela no Stitch                       | Screen ID                          | Requisitos Atendidos                    | Épico SDLC                                                               |
 | :------------------------------------------- | :--------------------------------- | :-------------------------------------- | :----------------------------------------------------------------------- |
-| **Login - CRM-RC Soberania**                 | `bc0b4602c2114cd0beecf3be46ca8572` | `RNF-SEC-01`, `RNF-SEC-04`              | Épico #3 / [Issue #21](https://github.com/fabiooliveir/crm-rc/issues/21) |
+| **Login - CRM-RC Soberania**                 | `1f671906e00f47a499737f4524fc7285` | `RNF-SEC-01`, `RNF-SEC-04`              | Épico #3 / [Issue #21](https://github.com/fabiooliveir/crm-rc/issues/21) |
 | **Cadastro Soberano - CRM-RC**               | `d3a8f49497f9499d95c338182c53bf71` | `RF-AUT-01`, `RNF-SOB-01`               | Épico #3 / [Issue #21](https://github.com/fabiooliveir/crm-rc/issues/21) |
 | **Perfil & Configurações - CRM-RC**          | `211475bfa41b42b1ac791fefbde4ab44` | `RF-PRF-01`, `RN-04`, `RNF-USA-01`      | Épico #3 / [Issue #22](https://github.com/fabiooliveir/crm-rc/issues/22) |
 | **CRM-RC Dashboard Mobile**                  | `7dba76d6abf14b5db6ca636987e92b00` | `RF-COM-06`, `RNF-PER-01`, `RNF-USA-01` | Épico #2 / #17; Épico #7 / #32                                           |
