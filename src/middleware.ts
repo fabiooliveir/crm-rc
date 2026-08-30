@@ -9,6 +9,12 @@ const AUTH_ROUTES = ['/login', '/register', '/forgot-password', '/reset-password
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+
+  // Ignora completamente arquivos estáticos, CSS, JS, imagens e APIs públicas
+  if (pathname.startsWith('/_next') || pathname.startsWith('/api/auth') || pathname.includes('.')) {
+    return NextResponse.next();
+  }
+
   const accessToken = req.cookies.get('accessToken')?.value;
 
   const isProtectedRoute = PROTECTED_ROUTES.some((route) => pathname.startsWith(route));
@@ -48,9 +54,6 @@ export function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    /*
-     * Intercepta todas as rotas exceto arquivos estáticos, chunks do Next.js e manifest
-     */
-    '/((?!_next/static|_next/image|favicon.ico|manifest.json|icons/|media/).*)',
+    '/((?!_next/static|_next/image|favicon.ico|manifest.json|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js)$).*)',
   ],
 };
