@@ -27,6 +27,7 @@ O ciclo de vida de desenvolvimento do projeto (**SDLC**) está estruturado nas s
 1. **Fase 1: Requisitos & Concepção de Produto** (`phase:1-requirements`)
    - `E01`: Concepção, Requisitos Funcionais e Regras de Negócio do Representante
    - 📄 [Especificação de Requisitos Funcionais (FRD) e Casos de Uso](docs/requirements/FRD-Especificacao-Requisitos-Funcionais.md) (`SDLC 1.1`)
+   - 👤 [Mapeamento de Personas e Jornada do Usuário Mobile-First](docs/requirements/PERSONAS-E-JORNADA-DO-USUARIO.md) (`SDLC 1.2`)
 2. **Fase 2: Design de Sistema & Arquitetura** (`phase:2-architecture`)
    - `E02`: Arquitetura de Software, Modelagem e UI/UX
 3. **Fase 3: Desenvolvimento - Core & Módulos Funcionais** (`phase:3-development`)
