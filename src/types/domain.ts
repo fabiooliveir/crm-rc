@@ -107,15 +107,32 @@ export interface Cliente {
   tags?: string[];
 }
 
+export enum BaseCalculoComissao {
+  FATURAMENTO = 'FATURAMENTO',
+  LIQUIDACAO = 'LIQUIDACAO',
+}
+
 export interface Representada {
   id: string;
   tenantId: string;
   razaoSocial: string;
   nomeFantasia: string;
   cnpj: string;
+  inscricaoEstadual?: string;
+  emailPedidos?: string;
+  telefoneFabrica?: string;
+  whatsappFabrica?: string;
+  nomeContatoGerente?: string;
   comissaoPadraoPct: number;
+  baseCalculoComissao: BaseCalculoComissao;
   tipoFretePadrao: FreteTipo;
+  prazoMedioEntregaDias?: number;
+  prazoMedioFaturamentoDias?: number;
+  pedidoMinimoValor?: number;
+  segmento?: string;
   ativo: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface Produto {

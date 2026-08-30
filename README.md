@@ -43,6 +43,7 @@ O ciclo de vida de desenvolvimento do projeto (**SDLC**) está estruturado nas s
    - 🔐 [Autenticação Segura, Tokens e Recuperação de Senha](src/lib/auth/authService.ts) (`SDLC 3.2`)
    - ⚙️ [Gestão de Perfil do Representante e Configurações de Conta](src/app/configuracoes/page.tsx) (`SDLC 3.3`)
    - `E04`: Módulo de Representadas & Catálogo de Produtos
+     - 🏭 [CRUD de Representadas e Regras Comerciais Básicas](src/app/representadas/page.tsx) (`SDLC 4.1`)
    - `E05`: Módulo de Clientes & Contatos (Propriedade Exclusiva)
    - `E06`: Módulo de Pedidos de Venda & Orçamentos
    - `E07`: Módulo Financeiro & Controle de Comissões
