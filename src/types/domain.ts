@@ -59,6 +59,18 @@ export interface Tenant {
   registroCore?: string;
   email: string;
   telefone?: string;
+  whatsapp?: string;
+  logoUrl?: string; // Base64 data URL ou CDN
+  logradouro?: string;
+  numero?: string;
+  complemento?: string;
+  bairro?: string;
+  cidade?: string;
+  uf?: string;
+  cep?: string;
+  chavePix?: string;
+  fusoHorario?: string;
+  aliquotaStPadrao?: number;
   plano: 'AUTONOMO' | 'ESCRITORIO_PRO' | 'ENTERPRISE';
   status: 'ACTIVE' | 'SUSPENDED' | 'TRIAL';
   createdAt: string;
@@ -71,6 +83,9 @@ export interface User {
   email: string;
   role: UserRole;
   whatsapp?: string;
+  telefone?: string;
+  avatarUrl?: string;
+  bio?: string;
   ativo: boolean;
 }
 

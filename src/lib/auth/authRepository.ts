@@ -61,6 +61,28 @@ class AuthRepository {
     return true;
   }
 
+  async updateUser(
+    userId: string,
+    data: Partial<Omit<User, 'id' | 'tenantId' | 'email' | 'role'>>
+  ): Promise<User | null> {
+    const user = this.users.get(userId);
+    if (!user) return null;
+
+    Object.assign(user, data);
+    return user;
+  }
+
+  async updateTenant(
+    tenantId: string,
+    data: Partial<Omit<Tenant, 'id' | 'createdAt'>>
+  ): Promise<Tenant | null> {
+    const tenant = this.tenants.get(tenantId);
+    if (!tenant) return null;
+
+    Object.assign(tenant, data);
+    return tenant;
+  }
+
   async savePasswordResetToken(
     token: string,
     userId: string,

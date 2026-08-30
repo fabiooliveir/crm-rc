@@ -41,6 +41,7 @@ O ciclo de vida de desenvolvimento do projeto (**SDLC**) está estruturado nas s
    - `E03`: Infraestrutura Base, Autenticação e Gestão de Conta
    - ⚡ [Setup Inicial do Boilerplate, TypeScript e Git Hooks](package.json) (`SDLC 3.1`)
    - 🔐 [Autenticação Segura, Tokens e Recuperação de Senha](src/lib/auth/authService.ts) (`SDLC 3.2`)
+   - ⚙️ [Gestão de Perfil do Representante e Configurações de Conta](src/app/configuracoes/page.tsx) (`SDLC 3.3`)
    - `E04`: Módulo de Representadas & Catálogo de Produtos
    - `E05`: Módulo de Clientes & Contatos (Propriedade Exclusiva)
    - `E06`: Módulo de Pedidos de Venda & Orçamentos
