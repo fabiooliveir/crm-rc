@@ -1,6 +1,8 @@
 # 5. Manual do Representante Comercial 📱
 
-> 📄 **Documento de UX e Jornadas:** Para conhecer o perfil detalhado das personas, o mapa de jornada ponta a ponta e as diretrizes de ergonomia móvel, consulte: [PERSONAS-E-JORNADA-DO-USUARIO.md](../requirements/PERSONAS-E-JORNADA-DO-USUARIO.md).
+> 📄 **Documentos Oficiais de Design & UX:**
+> - [PERSONAS-E-JORNADA-DO-USUARIO.md](../requirements/PERSONAS-E-JORNADA-DO-USUARIO.md) (`SDLC 1.2`) — Personas e mapa de jornada.
+> - [DESIGN-SYSTEM-E-WIREFRAMES.md](../design/DESIGN-SYSTEM-E-WIREFRAMES.md) (`SDLC 2.2`) — Design System, tokens e wireframes mobile gerados no Stitch.
 
 ---
 
