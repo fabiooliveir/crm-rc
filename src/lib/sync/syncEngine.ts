@@ -16,18 +16,18 @@ export type OperationType = 'CREATE' | 'UPDATE' | 'DELETE';
 export type SyncStatus = 'PENDING' | 'SYNCING' | 'SYNCED' | 'FAILED' | 'CONFLICT';
 
 export interface OutboxMutation {
-  id: string;                      // UUID v4 local (Chave Primária)
-  tenantId: string;                // ID do tenant isolado (RLS)
-  userId: string;                  // Autor da ação
+  id: string; // UUID v4 local (Chave Primária)
+  tenantId: string; // ID do tenant isolado (RLS)
+  userId: string; // Autor da ação
   entityType: EntityType;
   operation: OperationType;
-  payload: Record<string, any>;    // Dados completos da entidade
+  payload: Record<string, unknown>; // Dados completos da entidade
   status: SyncStatus;
-  attempts: number;                // Contador de tentativas de envio
-  lastAttemptAt?: number;          // Timestamp UTC da última tentativa
-  errorMessage?: string;           // Causa da última falha
-  createdAt: number;               // Timestamp UTC de criação no smartphone
-  updatedAt: number;               // Timestamp UTC da última modificação
+  attempts: number; // Contador de tentativas de envio
+  lastAttemptAt?: number; // Timestamp UTC da última tentativa
+  errorMessage?: string; // Causa da última falha
+  createdAt: number; // Timestamp UTC de criação no smartphone
+  updatedAt: number; // Timestamp UTC da última modificação
 }
 
 export interface LocalCliente {
@@ -75,7 +75,7 @@ export class CrmLocalDatabase extends Dexie {
       outboxQueue: 'id, tenantId, entityType, operation, status, createdAt, attempts',
       localClientes: 'id, tenantId, razaoSocial, cnpjCpf, status, uf, cidade, updatedAt',
       localProdutos: 'id, representadaId, codigoFabrica, updatedAt',
-      syncMetadata: 'key'
+      syncMetadata: 'key',
     });
   }
 }
@@ -100,7 +100,7 @@ export class SyncEngine {
     userId: string;
     entityType: EntityType;
     operation: OperationType;
-    payload: Record<string, any>;
+    payload: Record<string, unknown>;
   }): Promise<OutboxMutation> {
     const now = Date.now();
     const mutation: OutboxMutation = {
@@ -108,15 +108,19 @@ export class SyncEngine {
       status: 'PENDING',
       attempts: 0,
       createdAt: now,
-      updatedAt: now
+      updatedAt: now,
     };
 
     await localDb.outboxQueue.put(mutation);
-    console.log(`[SyncEngine] Mutação enfileirada no Outbox: ${mutation.id} (${mutation.entityType})`);
+    console.log(
+      `[SyncEngine] Mutação enfileirada no Outbox: ${mutation.id} (${mutation.entityType})`
+    );
 
     // Dispara tentativa de processamento imediato caso esteja online
     if (typeof navigator !== 'undefined' && navigator.onLine) {
-      this.processOutboxQueue().catch(err => console.error('[SyncEngine] Erro ao processar outbox:', err));
+      this.processOutboxQueue().catch((err) =>
+        console.error('[SyncEngine] Erro ao processar outbox:', err)
+      );
     }
 
     return mutation;
@@ -127,12 +131,16 @@ export class SyncEngine {
    */
   async processOutboxQueue(): Promise<{ processed: number; succeeded: number; failed: number }> {
     if (this.isProcessing) {
-      console.log('[SyncEngine] Processamento de sincronização já em andamento. Ignorando chamada concorrente.');
+      console.log(
+        '[SyncEngine] Processamento de sincronização já em andamento. Ignorando chamada concorrente.'
+      );
       return { processed: 0, succeeded: 0, failed: 0 };
     }
 
     if (typeof navigator !== 'undefined' && !navigator.onLine) {
-      console.log('[SyncEngine] Dispositivo offline (navigator.onLine = false). Sincronização postergada.');
+      console.log(
+        '[SyncEngine] Dispositivo offline (navigator.onLine = false). Sincronização postergada.'
+      );
       return { processed: 0, succeeded: 0, failed: 0 };
     }
 
@@ -149,7 +157,7 @@ export class SyncEngine {
         .equals('PENDING')
         .or('status')
         .equals('FAILED')
-        .filter(item => {
+        .filter((item) => {
           if (item.attempts === 0) return true;
           const backoffDelay = this.baseBackoffMs * Math.pow(2, item.attempts - 1);
           return now - (item.lastAttemptAt || 0) >= backoffDelay;
@@ -161,14 +169,16 @@ export class SyncEngine {
         return { processed: 0, succeeded: 0, failed: 0 };
       }
 
-      console.log(`[SyncEngine] Iniciando sincronização de lote com ${pendingMutations.length} mutações...`);
+      console.log(
+        `[SyncEngine] Iniciando sincronização de lote com ${pendingMutations.length} mutações...`
+      );
 
       for (const mutation of pendingMutations) {
         processed++;
         await localDb.outboxQueue.update(mutation.id, {
           status: 'SYNCING',
           lastAttemptAt: Date.now(),
-          attempts: mutation.attempts + 1
+          attempts: mutation.attempts + 1,
         });
 
         try {
@@ -178,25 +188,31 @@ export class SyncEngine {
             await localDb.outboxQueue.update(mutation.id, {
               status: 'SYNCED',
               errorMessage: undefined,
-              updatedAt: Date.now()
+              updatedAt: Date.now(),
             });
             succeeded++;
-            console.log(`[SyncEngine] ✅ Mutação ${mutation.id} sincronizada com sucesso no backend.`);
+            console.log(
+              `[SyncEngine] ✅ Mutação ${mutation.id} sincronizada com sucesso no backend.`
+            );
           } else {
             throw new Error('Falha no recebimento de ACK pelo servidor.');
           }
-        } catch (error: any) {
+        } catch (error: unknown) {
           failed++;
           const nextAttempts = mutation.attempts + 1;
           const status = nextAttempts >= this.maxAttempts ? 'FAILED' : 'PENDING';
+          const errorMsg = error instanceof Error ? error.message : 'Erro de rede desconhecido';
 
           await localDb.outboxQueue.update(mutation.id, {
             status,
-            errorMessage: error.message || 'Erro de rede desconhecido',
-            updatedAt: Date.now()
+            errorMessage: errorMsg,
+            updatedAt: Date.now(),
           });
 
-          console.warn(`[SyncEngine] ⚠️ Falha ao sincronizar mutação ${mutation.id} (Tentativa ${nextAttempts}):`, error.message);
+          console.warn(
+            `[SyncEngine] ⚠️ Falha ao sincronizar mutação ${mutation.id} (Tentativa ${nextAttempts}):`,
+            errorMsg
+          );
         }
       }
     } finally {
@@ -209,9 +225,7 @@ export class SyncEngine {
   /**
    * Mock/Wrapper de envio HTTP para o endpoint central da API (/api/v1/sync/push).
    */
-  private async sendMutationToServer(mutation: OutboxMutation): Promise<boolean> {
-    // Simulação de chamada HTTP com headers de idempotência
-    // Em produção: const response = await fetch('/api/v1/sync/push', { method: 'POST', headers: { 'X-Idempotency-Key': mutation.id, ... } });
+  private async sendMutationToServer(_mutation: OutboxMutation): Promise<boolean> {
     return new Promise((resolve) => {
       setTimeout(() => {
         // Mock bem-sucedido determinístico
@@ -224,7 +238,12 @@ export class SyncEngine {
    * Retorna a contagem de itens pendentes na fila local.
    */
   async getPendingCount(): Promise<number> {
-    return localDb.outboxQueue.where('status').equals('PENDING').or('status').equals('FAILED').count();
+    return localDb.outboxQueue
+      .where('status')
+      .equals('PENDING')
+      .or('status')
+      .equals('FAILED')
+      .count();
   }
 }
 

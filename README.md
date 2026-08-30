@@ -11,6 +11,7 @@ O **CRM-RC** é um sistema projetado sob medida para **Representantes Comerciais
 No modelo tradicional de representação, o profissional utiliza frequentemente os CRMs das próprias indústrias representadas. Contudo, ao rescindir ou trocar de representada, todo o histórico de negociações, anotações de visitas, perfis de compradores e histórico de pedidos fica retido na empresa parceira.
 
 O **CRM-RC** resolve essa dor ao proporcionar:
+
 - **Base de Clientes Soberana:** A carteira de clientes, contatos e histórico pertencem exclusivamente ao representante comercial.
 - **Multi-Representadas:** Gestão centralizada de múltiplas marcas, catálogos de produtos, tabelas de preços e políticas comerciais.
 - **Emissão Ágil de Pedidos:** Geração rápida de pedidos e orçamentos em PDF com compartilhamento instantâneo via WhatsApp/E-mail.
@@ -38,6 +39,7 @@ O ciclo de vida de desenvolvimento do projeto (**SDLC**) está estruturado nas s
    - 🛡️ [Política de Segurança, Criptografia e Isolamento RLS](docs/architecture/POLITICA-DE-SEGURANCA-E-ISOLAMENTO-RLS.md) (`SDLC 2.4`)
 3. **Fase 3: Desenvolvimento - Core & Módulos Funcionais** (`phase:3-development`)
    - `E03`: Infraestrutura Base, Autenticação e Gestão de Conta
+   - ⚡ [Setup Inicial do Boilerplate, TypeScript e Git Hooks](package.json) (`SDLC 3.1`)
    - `E04`: Módulo de Representadas & Catálogo de Produtos
    - `E05`: Módulo de Clientes & Contatos (Propriedade Exclusiva)
    - `E06`: Módulo de Pedidos de Venda & Orçamentos
