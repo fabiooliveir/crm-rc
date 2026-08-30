@@ -314,12 +314,15 @@ graph LR
 
 ## 5. 🔗 Rastreabilidade e Telas no Stitch (`projects/17580858458874345646`)
 
-| Nome da Tela no Stitch                       | Screen ID                          | Requisitos Atendidos                    | Épico SDLC                                                               |
-| :------------------------------------------- | :--------------------------------- | :-------------------------------------- | :----------------------------------------------------------------------- |
-| **Login - CRM-RC Soberania**                 | `1f671906e00f47a499737f4524fc7285` | `RNF-SEC-01`, `RNF-SEC-04`              | Épico #3 / [Issue #21](https://github.com/fabiooliveir/crm-rc/issues/21) |
-| **Cadastro Soberano - CRM-RC**               | `d3a8f49497f9499d95c338182c53bf71` | `RF-AUT-01`, `RNF-SOB-01`               | Épico #3 / [Issue #21](https://github.com/fabiooliveir/crm-rc/issues/21) |
-| **Perfil & Configurações - CRM-RC**          | `211475bfa41b42b1ac791fefbde4ab44` | `RF-PRF-01`, `RN-04`, `RNF-USA-01`      | Épico #3 / [Issue #22](https://github.com/fabiooliveir/crm-rc/issues/22) |
-| **CRM-RC Dashboard Mobile**                  | `7dba76d6abf14b5db6ca636987e92b00` | `RF-COM-06`, `RNF-PER-01`, `RNF-USA-01` | Épico #2 / #17; Épico #7 / #32                                           |
-| **Emissão Expressa - Produtos**              | `2ed9a018ee444930bd78d5deff25b227` | `RF-PED-01`, `RF-PED-02`, `RN-03`       | Épico #2 / #17; Épico #6 / #29                                           |
-| **Ficha 360° - Depósito São José**           | `7249dc4ab33d49518cf3c909e054f66b` | `RF-CLI-01`, `RF-CLI-03`, `RN-01`       | Épico #2 / #17; Épico #5 / #27                                           |
-| **Catálogo de Produtos Multi-Representadas** | `b6e2fbb4e30c4c2a9c074a0863e6486a` | `RF-REP-01`, `RF-REP-02`, `RN-02`       | Épico #2 / #17; Épico #4 / #25                                           |
+| Nome da Tela no Stitch                       | Screen ID                          | Requisitos Atendidos                       | Épico SDLC                                                               |
+| :------------------------------------------- | :--------------------------------- | :----------------------------------------- | :----------------------------------------------------------------------- |
+| **Login - CRM-RC Soberania**                 | `1f671906e00f47a499737f4524fc7285` | `RNF-SEC-01`, `RNF-SEC-04`                 | Épico #3 / [Issue #21](https://github.com/fabiooliveir/crm-rc/issues/21) |
+| **Cadastro Soberano - CRM-RC**               | `d3a8f49497f9499d95c338182c53bf71` | `RF-AUT-01`, `RNF-SOB-01`                  | Épico #3 / [Issue #21](https://github.com/fabiooliveir/crm-rc/issues/21) |
+| **Perfil & Configurações - CRM-RC**          | `211475bfa41b42b1ac791fefbde4ab44` | `RF-PRF-01`, `RN-04`, `RNF-USA-01`         | Épico #3 / [Issue #22](https://github.com/fabiooliveir/crm-rc/issues/22) |
+| **Indústrias Representadas - CRM-RC**        | `baa88d6dec3b455b992c6f89c7996608` | `RF-REP-01`, `RN-06`, `RN-13`              | Épico #4 / [Issue #23](https://github.com/fabiooliveir/crm-rc/issues/23) |
+| **Nova Representada Parceira - CRM-RC**      | `9c67a66c6a8b4beb81770ececf1e016b` | `RF-REP-01`, `RN-06`, `RN-13`              | Épico #4 / [Issue #23](https://github.com/fabiooliveir/crm-rc/issues/23) |
+| **Catálogo de Produtos Multi-Representadas** | `b6e2fbb4e30c4c2a9c074a0863e6486a` | `RF-REP-01`, `RF-REP-02`, `RN-02`, `RN-03` | Épico #4 / [Issue #24](https://github.com/fabiooliveir/crm-rc/issues/24) |
+| **Cadastro de Produto - CRM-RC**             | `fa63c01452c14e65949c0c9f37a06707` | `RF-REP-02`, `RN-03`, `RNF-USA-01`         | Épico #4 / [Issue #24](https://github.com/fabiooliveir/crm-rc/issues/24) |
+| **CRM-RC Dashboard Mobile**                  | `7dba76d6abf14b5db6ca636987e92b00` | `RF-COM-06`, `RNF-PER-01`, `RNF-USA-01`    | Épico #2 / #17; Épico #7 / #32                                           |
+| **Emissão Expressa - Produtos**              | `2ed9a018ee444930bd78d5deff25b227` | `RF-PED-01`, `RF-PED-02`, `RN-03`          | Épico #2 / #17; Épico #6 / #29                                           |
+| **Ficha 360° - Depósito São José**           | `7249dc4ab33d49518cf3c909e054f66b` | `RF-CLI-01`, `RF-CLI-03`, `RN-01`          | Épico #2 / #17; Épico #5 / #27                                           |

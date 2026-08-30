@@ -139,14 +139,20 @@ export interface Produto {
   id: string;
   tenantId: string;
   representadaId: string;
-  codigoFabrica: string;
-  ean?: string;
-  descricao: string;
+  codigoFabrica: string; // SKU
+  ean?: string; // Código de Barras EAN-13
+  descricao: string; // Nome comercial do produto
+  descricaoDetalhada?: string;
   ncm?: string;
-  unidadeMedida: string;
-  multiploEmbalagem: number;
-  precoBase: number;
+  categoria?: string; // Linha / Categoria do produto
+  unidadeMedida: string; // UN, CX, L, KG, SC, PALLET
+  multiploEmbalagem: number; // Múltiplo para venda (RN-03)
+  precoBase: number; // Preço base em R$
+  aliquotaIpiPct?: number; // IPI em %
+  fotoUrl?: string; // URL da imagem ou Base64 para exibição no catálogo/showroom
   ativo: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface PedidoItem {

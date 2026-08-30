@@ -44,6 +44,7 @@ O ciclo de vida de desenvolvimento do projeto (**SDLC**) está estruturado nas s
    - ⚙️ [Gestão de Perfil do Representante e Configurações de Conta](src/app/configuracoes/page.tsx) (`SDLC 3.3`)
    - `E04`: Módulo de Representadas & Catálogo de Produtos
      - 🏭 [CRUD de Representadas e Regras Comerciais Básicas](src/app/representadas/page.tsx) (`SDLC 4.1`)
+     - 📦 [Catálogo de Produtos e Grade por Representada](src/app/catalogo/page.tsx) (`SDLC 4.2`)
    - `E05`: Módulo de Clientes & Contatos (Propriedade Exclusiva)
    - `E06`: Módulo de Pedidos de Venda & Orçamentos
    - `E07`: Módulo Financeiro & Controle de Comissões
