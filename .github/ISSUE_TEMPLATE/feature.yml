@@ -1,0 +1,29 @@
+name: "✨ Nova Funcionalidade (Feature)"
+description: "Propor ou registrar o desenvolvimento de uma nova funcionalidade"
+title: "[Feature]: "
+labels: ["feature"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição da Funcionalidade
+      description: Explique o que precisa ser desenvolvido e o valor gerado para o representante.
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Regras de Negócio & Requisitos Técnicos
+      description: Detalhe os fluxos, validações e comportamentos esperados.
+    validations:
+      required: true
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Critérios de Aceitação (Definition of Done)
+      description: Liste os critérios que validam a entrega desta feature.
+      placeholder: |
+        - [ ] Critério 1
+        - [ ] Critério 2
+    validations:
+      required: true

@@ -1,0 +1,33 @@
+name: "📌 Épico / Epic"
+description: "Criar um novo Épico estrutural no ciclo SDLC do CRM-RC"
+title: "[Épico]: "
+labels: ["epic"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por registrar um Épico no **CRM-RC**!
+  - type: textarea
+    id: overview
+    attributes:
+      label: Visão Geral e Contexto de Negócio
+      description: Descreva o objetivo deste épico e seu impacto para o representante comercial.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Escopo e Sub-issues / Tarefas
+      description: Liste as sub-tarefas associadas a este épico.
+      placeholder: |
+        - [ ] Tarefa 1
+        - [ ] Tarefa 2
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Critérios de Aceite
+      description: O que define a conclusão deste épico com sucesso?
+    validations:
+      required: true
