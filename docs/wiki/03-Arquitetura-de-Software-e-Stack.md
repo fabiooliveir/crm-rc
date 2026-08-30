@@ -1,6 +1,8 @@
 # 3. Arquitetura de Software e Stack Técnica 🏛️
 
-> 📄 **Documento Oficial de Engenharia:** Para o detalhamento completo do Modelo C4 (Contexto, Containers e Componentes), diagramas e os 6 Registros de Decisão Arquitetural (ADRs), consulte: [ARQUITETURA-DE-SOLUCAO-E-STACK.md](../architecture/ARQUITETURA-DE-SOLUCAO-E-STACK.md).
+> 📄 **Documentos Oficiais de Engenharia & Arquitetura:**
+> - [ARQUITETURA-DE-SOLUCAO-E-STACK.md](../architecture/ARQUITETURA-DE-SOLUCAO-E-STACK.md) (`SDLC 2.1`) — Modelo C4 e os 6 Registros de Decisão Arquitetural (ADRs).
+> - [ESTRATEGIA-DE-CACHE-E-SYNC-OFFLINE.md](../architecture/ESTRATEGIA-DE-CACHE-E-SYNC-OFFLINE.md) (`SDLC 2.3`) — Engine de sincronização offline, Outbox Pattern e Service Workers.
 
 ---
 
