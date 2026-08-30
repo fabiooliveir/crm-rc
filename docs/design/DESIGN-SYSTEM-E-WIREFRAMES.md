@@ -1,18 +1,20 @@
 # Design System, Wireframes & Guia de Estilos Mobile-First
+
 ## CRM-RC: CRM para Representantes Comerciais Multi-Representadas
 
 ---
 
 ### 📋 Controle do Documento
-| Item | Descrição |
-| :--- | :--- |
-| **Código do Documento** | `UIX-SDLC-2.2` |
-| **Versão** | `1.0.0` |
-| **Status** | Aprovado |
-| **Data de Emissão** | 30 de Agosto de 2026 |
-| **Épico Vinculado** | [Épico #2: Arquitetura Técnica de Software, Modelo de Dados e Design UI/UX](https://github.com/fabiooliveir/crm-rc/issues/2) |
-| **Issue de Entrega** | [Issue #17: [SDLC 2.2] Wireframes e Design UI/UX das Telas Principais (Mobile-First)](https://github.com/fabiooliveir/crm-rc/issues/17) |
-| **Projeto Stitch MCP** | `projects/17580858458874345646` (`CRM-RC — Mobile-First CRM para Representantes Comerciais`) |
+
+| Item                        | Descrição                                                                                                                                                                                                                                                                                                               |
+| :-------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Código do Documento**     | `UIX-SDLC-2.2`                                                                                                                                                                                                                                                                                                          |
+| **Versão**                  | `1.0.0`                                                                                                                                                                                                                                                                                                                 |
+| **Status**                  | Aprovado                                                                                                                                                                                                                                                                                                                |
+| **Data de Emissão**         | 30 de Agosto de 2026                                                                                                                                                                                                                                                                                                    |
+| **Épico Vinculado**         | [Épico #2: Arquitetura Técnica de Software, Modelo de Dados e Design UI/UX](https://github.com/fabiooliveir/crm-rc/issues/2)                                                                                                                                                                                            |
+| **Issue de Entrega**        | [Issue #17: [SDLC 2.2] Wireframes e Design UI/UX das Telas Principais (Mobile-First)](https://github.com/fabiooliveir/crm-rc/issues/17)                                                                                                                                                                                 |
+| **Projeto Stitch MCP**      | `projects/17580858458874345646` (`CRM-RC — Mobile-First CRM para Representantes Comerciais`)                                                                                                                                                                                                                            |
 | **Documentos Relacionados** | [PERSONAS-E-JORNADA-DO-USUARIO.md](../requirements/PERSONAS-E-JORNADA-DO-USUARIO.md) (`SDLC 1.2`), [RNF-Requisitos-Nao-Funcionais-e-LGPD.md](../requirements/RNF-Requisitos-Nao-Funcionais-e-LGPD.md) (`SDLC 1.3`), [ARQUITETURA-DE-SOLUCAO-E-STACK.md](../architecture/ARQUITETURA-DE-SOLUCAO-E-STACK.md) (`SDLC 2.1`) |
 
 ---
@@ -22,10 +24,11 @@
 O Design System do **CRM-RC** foi concebido sob a premissa **Mobile-First**, **Operação em Pé / Uma Mão** e **Alta Legibilidade sob Sol Forte**.
 
 ### 🌟 Pilares Visuais
+
 1. **Ergonomia do Polegar (Thumb-Driven Interface):** Todas as ações críticas (novo pedido, avançar etapa, busca rápida, discagem de WhatsApp) estão posicionadas na metade inferior da tela do smartphone (Zona de Conforto do Polegar).
 2. **Alto Contraste Funcional (Modo Campo):** Paleta calibrada para taxas de contraste WCAG AAA ($\ge 7:1$), evitando tons pasteis ilegíveis sob luz solar direta em pátios e depósitos.
 3. **Touch Targets Generosos ($\ge 48\text{px}$):** Botões e seletores com altura mínima de 48px ou 56px para digitação rápida e sem erros de toque.
-4. **Densidade de Dados com Clareza:** Apresentação clara de números monetários formatados em fontes tabulares (*Tabular Figures*) e badges de status visualmente distintos.
+4. **Densidade de Dados com Clareza:** Apresentação clara de números monetários formatados em fontes tabulares (_Tabular Figures_) e badges de status visualmente distintos.
 
 ---
 
@@ -50,43 +53,43 @@ graph LR
 
 ### 2.1. Paleta de Cores (Color Tokens)
 
-| Token Semântico | Hexadecimal | RGB / HSL | Uso Primário na Interface |
-| :--- | :--- | :--- | :--- |
-| **`color-primary`** (Slate Navy) | `#0F172A` | `rgb(15, 23, 42)` | Header, títulos principais, botões neutros e bordas de foco. |
-| **`color-secondary`** (Emerald) | `#10B981` | `rgb(16, 185, 129)` | Botão de Fechar Pedido, valores de comissão recebida, badges de status `Concluído`. |
-| **`color-accent`** (Action Blue) | `#3B82F6` | `rgb(59, 130, 246)` | Seletores de abas, links de detalhes e chips de navegação. |
-| **`color-whatsapp`** (WA Green) | `#25D366` | `rgb(37, 211, 102)` | Botão direto de disparo de WhatsApp (`wa.me`). |
-| **`color-surface`** (Pure White) | `#FFFFFF` | `rgb(255, 255, 255)` | Superfície de cards, modais e inputs de formulário. |
-| **`color-background`** (Light Gray) | `#F8FAFC` | `rgb(248, 250, 252)` | Fundo da tela do aplicativo para descanso visual. |
-| **`color-border`** (Slate 200) | `#E2E8F0` | `rgb(226, 232, 240)` | Divisores sutis e contornos de cards. |
-| **`color-warning`** (Amber) | `#F59E0B` | `rgb(245, 158, 11)` | Pedidos aguardando faturamento, limite de crédito quase no fim. |
-| **`color-danger`** (Coral Red) | `#EF4444` | `rgb(239, 68, 68)` | Glosas de comissões, pedidos cancelados, clientes bloqueados. |
+| Token Semântico                     | Hexadecimal | RGB / HSL            | Uso Primário na Interface                                                           |
+| :---------------------------------- | :---------- | :------------------- | :---------------------------------------------------------------------------------- |
+| **`color-primary`** (Slate Navy)    | `#0F172A`   | `rgb(15, 23, 42)`    | Header, títulos principais, botões neutros e bordas de foco.                        |
+| **`color-secondary`** (Emerald)     | `#10B981`   | `rgb(16, 185, 129)`  | Botão de Fechar Pedido, valores de comissão recebida, badges de status `Concluído`. |
+| **`color-accent`** (Action Blue)    | `#3B82F6`   | `rgb(59, 130, 246)`  | Seletores de abas, links de detalhes e chips de navegação.                          |
+| **`color-whatsapp`** (WA Green)     | `#25D366`   | `rgb(37, 211, 102)`  | Botão direto de disparo de WhatsApp (`wa.me`).                                      |
+| **`color-surface`** (Pure White)    | `#FFFFFF`   | `rgb(255, 255, 255)` | Superfície de cards, modais e inputs de formulário.                                 |
+| **`color-background`** (Light Gray) | `#F8FAFC`   | `rgb(248, 250, 252)` | Fundo da tela do aplicativo para descanso visual.                                   |
+| **`color-border`** (Slate 200)      | `#E2E8F0`   | `rgb(226, 232, 240)` | Divisores sutis e contornos de cards.                                               |
+| **`color-warning`** (Amber)         | `#F59E0B`   | `rgb(245, 158, 11)`  | Pedidos aguardando faturamento, limite de crédito quase no fim.                     |
+| **`color-danger`** (Coral Red)      | `#EF4444`   | `rgb(239, 68, 68)`   | Glosas de comissões, pedidos cancelados, clientes bloqueados.                       |
 
 ---
 
 ### 2.2. Tipografia (Typography Scale)
 
-* **Fonte Principal:** `Inter` (Google Fonts / Geist Sans).
-* **Renderização Numérica:** `font-variant-numeric: tabular-nums` (alinhamento perfeito de colunas de valores monetários).
+- **Fonte Principal:** `Inter` (Google Fonts / Geist Sans).
+- **Renderização Numérica:** `font-variant-numeric: tabular-nums` (alinhamento perfeito de colunas de valores monetários).
 
-| Nível Tipográfico | Tamanho / Line Height | Peso (Weight) | Aplicação Mobile |
-| :--- | :--- | :--- | :--- |
-| **Display LG** | `32px / 40px` | Bold (700) | Totalizadores financeiros e destaques de comissão do mês. |
-| **Headline LG** | `24px / 32px` | SemiBold (600) | Título principal de telas e seções centrais. |
-| **Headline Mobile** | `20px / 28px` | SemiBold (600) | Nome de clientes em cards e títulos de produtos. |
-| **Body LG** | `18px / 26px` | Regular (400) | Preços unitários e valores em destaque no carrinho. |
-| **Body MD** | `16px / 24px` | Regular (400) | Textos de formulários, descrições de produtos e notas. |
-| **Label MD** | `14px / 20px` | Medium (500) | Labels de campos, botões de ação e tabs de navegação. |
-| **Caption SM** | `12px / 16px` | Regular (400) | Múltiplos de embalagem, códigos NCM, datas e badges de rota. |
+| Nível Tipográfico   | Tamanho / Line Height | Peso (Weight)  | Aplicação Mobile                                             |
+| :------------------ | :-------------------- | :------------- | :----------------------------------------------------------- |
+| **Display LG**      | `32px / 40px`         | Bold (700)     | Totalizadores financeiros e destaques de comissão do mês.    |
+| **Headline LG**     | `24px / 32px`         | SemiBold (600) | Título principal de telas e seções centrais.                 |
+| **Headline Mobile** | `20px / 28px`         | SemiBold (600) | Nome de clientes em cards e títulos de produtos.             |
+| **Body LG**         | `18px / 26px`         | Regular (400)  | Preços unitários e valores em destaque no carrinho.          |
+| **Body MD**         | `16px / 24px`         | Regular (400)  | Textos de formulários, descrições de produtos e notas.       |
+| **Label MD**        | `14px / 20px`         | Medium (500)   | Labels de campos, botões de ação e tabs de navegação.        |
+| **Caption SM**      | `12px / 16px`         | Regular (400)  | Múltiplos de embalagem, códigos NCM, datas e badges de rota. |
 
 ---
 
 ### 2.3. Espaçamento & Formas (Spacing & Radii Tokens)
 
-* **Grid Base:** Múltiplo de `8px`.
-* **Margem Lateral Mobile:** `16px` (com padding seguro para a barra de gestos do iOS/Android).
-* **Touch Target Mínimo:** `48px × 48px` (área física de clique).
-* **Border Radius:**
+- **Grid Base:** Múltiplo de `8px`.
+- **Margem Lateral Mobile:** `16px` (com padding seguro para a barra de gestos do iOS/Android).
+- **Touch Target Mínimo:** `48px × 48px` (área física de clique).
+- **Border Radius:**
   - `radius-sm` (`4px`): Badges e chips de tags.
   - `radius-md` (`8px`): Inputs, botões secundários e cards compactos.
   - `radius-lg` (`12px` / `16px`): Cards de destaque financeiro e bottom sheets.
@@ -143,6 +146,7 @@ graph LR
 ```
 
 #### Elementos e Comportamentos Chave:
+
 - **Header:** Saudação com avatar, status de sincronização e sinalização de operação offline.
 - **Hero Grid 2x2:** Indicadores financeiros consolidados e calculados em tempo real a partir do banco local IndexedDB.
 - **Agenda de Visitas:** Acesso instantâneo aos 3 atalhos de campo: **WhatsApp**, **Telefone** e **GPS** (Google Maps / Waze).
@@ -189,6 +193,7 @@ graph LR
 ```
 
 #### Elementos e Comportamentos Chave:
+
 - **Stepper Superior:** Indica progresso claro de 3 etapas rápidas.
 - **Validação de Caixa Fechada (`RN-03`):** Os botões `+` e `-` incrementam automaticamente de acordo com o múltiplo cadastrado (ex: caixas com 2, 4 ou 12 unidades).
 - **Cálculo de Comissão em Tempo Real:** O representante visualiza o valor de comissão sendo projetado à medida que insere os itens.
@@ -230,8 +235,9 @@ graph LR
 ```
 
 #### Elementos e Comportamentos Chave:
+
 - **Ações Imediatas:** 3 botões circulares principais (WhatsApp, Telefone e Rota GPS) para contato sem necessidade de salvar na agenda física do celular.
-- **Tabs de Inteligência:** Alternância ágil entre *Contatos*, *Histórico de Pedidos*, *Linha do Tempo de Visitas* e *Notas Privadas* do representante.
+- **Tabs de Inteligência:** Alternância ágil entre _Contatos_, _Histórico de Pedidos_, _Linha do Tempo de Visitas_ e _Notas Privadas_ do representante.
 - **Soberania Absoluta (`RN-01`):** Nenhuma anotação privada ou contato é exportado para as indústrias representadas.
 
 ---
@@ -274,6 +280,7 @@ graph LR
 ```
 
 #### Elementos e Comportamentos Chave:
+
 - **Chips de Representada em Carrossel Horizontal:** Troca de catálogo em 1 toque sem recarregar a tela.
 - **Identificação Visual do Múltiplo de Venda:** Preço unitário e preço por caixa fechada exibidos lado a lado para evitar dúvidas durante a cotação.
 - **Inserção Direta no Carrinho:** Botão `[Adicionar ao Pedido Ativo]` para compor orçamentos com extrema rapidez.
@@ -305,11 +312,14 @@ graph LR
 
 ---
 
-## 5. 🔗 Rastreabilidade com os Épicos e Requisitos do SDLC
+## 5. 🔗 Rastreabilidade e Telas no Stitch (`projects/17580858458874345646`)
 
-| Componente de UI/UX | Requisito Funcional / Não-Funcional Atendido | Épico SDLC |
-| :--- | :--- | :--- |
-| **Dashboard Mobile** | `RF-COM-06`, `RNF-PER-01`, `RNF-USA-01` | Épico #2 / #17; Épico #7 / #32 |
-| **Emissão Expressa de Pedido** | `RF-PED-01`, `RF-PED-02`, `RN-03`, `RNF-OFF-01` | Épico #2 / #17; Épico #6 / #29 |
-| **Ficha 360° do Cliente** | `RF-CLI-01`, `RF-CLI-03`, `RN-01`, `RNF-SOB-01` | Épico #2 / #17; Épico #5 / #27 |
-| **Catálogo Multi-Representadas**| `RF-REP-01`, `RF-REP-02`, `RN-02`, `RNF-PER-07` | Épico #2 / #17; Épico #4 / #25 |
+| Nome da Tela no Stitch                       | Screen ID                          | Requisitos Atendidos                    | Épico SDLC                                                               |
+| :------------------------------------------- | :--------------------------------- | :-------------------------------------- | :----------------------------------------------------------------------- |
+| **Login - CRM-RC Soberania**                 | `bc0b4602c2114cd0beecf3be46ca8572` | `RNF-SEC-01`, `RNF-SEC-04`              | Épico #3 / [Issue #21](https://github.com/fabiooliveir/crm-rc/issues/21) |
+| **Cadastro Soberano - CRM-RC**               | `d3a8f49497f9499d95c338182c53bf71` | `RF-AUT-01`, `RNF-SOB-01`               | Épico #3 / [Issue #21](https://github.com/fabiooliveir/crm-rc/issues/21) |
+| **Perfil & Configurações - CRM-RC**          | `211475bfa41b42b1ac791fefbde4ab44` | `RF-PRF-01`, `RN-04`, `RNF-USA-01`      | Épico #3 / [Issue #22](https://github.com/fabiooliveir/crm-rc/issues/22) |
+| **CRM-RC Dashboard Mobile**                  | `7dba76d6abf14b5db6ca636987e92b00` | `RF-COM-06`, `RNF-PER-01`, `RNF-USA-01` | Épico #2 / #17; Épico #7 / #32                                           |
+| **Emissão Expressa - Produtos**              | `2ed9a018ee444930bd78d5deff25b227` | `RF-PED-01`, `RF-PED-02`, `RN-03`       | Épico #2 / #17; Épico #6 / #29                                           |
+| **Ficha 360° - Depósito São José**           | `7249dc4ab33d49518cf3c909e054f66b` | `RF-CLI-01`, `RF-CLI-03`, `RN-01`       | Épico #2 / #17; Épico #5 / #27                                           |
+| **Catálogo de Produtos Multi-Representadas** | `b6e2fbb4e30c4c2a9c074a0863e6486a` | `RF-REP-01`, `RF-REP-02`, `RN-02`       | Épico #2 / #17; Épico #4 / #25                                           |
